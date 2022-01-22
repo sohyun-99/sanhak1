@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="3.37.151.68" id="31007645-77bf-4edc-bf8f-b818640243e9" keyPath="C:\Users\82103\Downloads\sanhak.pem" port="22" nameFormat="DESCRIPTIVE" username="ubuntu" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>
