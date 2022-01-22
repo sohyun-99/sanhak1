@@ -17,4 +17,6 @@ public class professor {
 
     @Column(length = 20)
     private String major;
+
+    public professor(){}
 }

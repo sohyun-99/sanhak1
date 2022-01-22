@@ -4,19 +4,16 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@IdClass(attendancePK.class)
 public class attendance {
 
     @Id
     @Column(length = 10,columnDefinition ="char")
-    @OneToOne
-    @JoinColumn
-    private student student_id;
+    private String student_id;
 
     @Id
     @Column(length = 14,columnDefinition ="char")
-    @OneToOne
-    @JoinColumn
-    private syllabus syllabus_id;
+    private String syllabus_id;
 
 
     @Column
@@ -26,15 +23,10 @@ public class attendance {
     private int semester;
 
     @Column(columnDefinition="TINYINT")
-    @OneToOne
-    @JoinColumn
-    private grade grade_year;
-
+    private int grade_year;
 
     @Column(columnDefinition = "TINYINT")
-    @OneToOne
-    @JoinColumn
-    private grade grade_semester;
+    private int grade_semester;
 
     @Column(columnDefinition = "TINYINT")
     private int week1;
@@ -84,10 +76,11 @@ public class attendance {
     @Column(columnDefinition = "TINYINT")
     private int week16;
 
+    public attendance(){}
 }
 
 class attendancePK implements Serializable {
-    private student student_id;
-    private syllabus syllabus_id;
+    private String student_id;
+    private String syllabus_id;
 
 }

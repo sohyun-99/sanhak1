@@ -4,12 +4,11 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@IdClass(quizPK.class)
 public class quiz {
     @Id
     @Column(length = 14,columnDefinition ="char")
-    @OneToOne
-    @JoinColumn
-    private syllabus syllabus_id;
+    private String syllabus_id;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,10 +32,12 @@ public class quiz {
 
     @Column(length = 200)
     private String correct_answer;
+
+    public quiz(){}
 }
 
 class quizPK implements Serializable {
-    private syllabus syllabus_id;
+    private String syllabus_id;
     private String quiz_id;
     private int question_num;
 

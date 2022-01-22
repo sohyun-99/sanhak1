@@ -21,7 +21,7 @@ public class student {
     @Column(columnDefinition = "TINYINT")
     private int student_semester;
 
-
+    public student(){}
 
 
 

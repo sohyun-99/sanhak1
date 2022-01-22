@@ -1,17 +1,17 @@
 package sim.DB;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
+@Entity
 public class board {
+
     @Id
     @GeneratedValue
     private int board_id;
 
     @Column(length = 14,columnDefinition ="char")
-    @OneToOne
-    @JoinColumn
-    private syllabus syllabus_id;
+    private String syllabus_id;
 
     @Column(columnDefinition = "TINYINT")
     private int category;
@@ -25,11 +25,9 @@ public class board {
     @Column(length = 10)
     private String writer;
 
-    @Column
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
 
-    @Column
     private int view;
 
     @Column(columnDefinition="bit(1)")
@@ -41,5 +39,5 @@ public class board {
     @Column(length = 300)
     private String attachment_path;
 
-
+    public board(){}
 }

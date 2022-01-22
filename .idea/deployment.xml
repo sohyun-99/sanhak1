@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="sohyun" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" serverName="sanhakEc2" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="sohyun">
+      <paths name="sanhakEc2">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

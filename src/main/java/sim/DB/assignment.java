@@ -5,11 +5,11 @@ import org.apache.ibatis.annotations.One;
 import javax.persistence.*;
 import java.awt.print.Book;
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
 
-@Entity(name="assignment")
+@Entity
 public class assignment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,9 +17,7 @@ public class assignment {
     private int assignment_id;
 
     @Column(length = 14,columnDefinition ="char")
-    @OneToOne
-    @JoinColumn
-    private syllabus syllabus_id;
+    private String syllabus_id;
 
     @Column(length = 30)
     private String name;
@@ -40,9 +38,8 @@ public class assignment {
 
     @Column(length = 300)
     private String attachment_path;
-}
 
-class assignmentPK implements Serializable {
-    private student student_id;
-    private syllabus syllabus_id;
+    public assignment(){
+
+    }
 }

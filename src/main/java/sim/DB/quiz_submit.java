@@ -4,40 +4,34 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@IdClass(quiz_submitPK.class)
 public class quiz_submit {
     @Id
     @Column(length = 14,columnDefinition ="char")
-    @OneToOne
-    @JoinColumn
-    private syllabus syllabus_id;
+    private String syllabus_id;
 
     @Id
     @Column(length = 10,columnDefinition ="char")
-    @OneToOne
-    @JoinColumn
-    private student student_id;
+    private String student_id;
 
     @Id
-    @OneToOne
-    @JoinColumn
-    private quiz quiz_id;
+    private String quiz_id;
 
     @Id
-    @OneToOne
-    @JoinColumn
-    private quiz question_num;
+    private int question_num;
 
     private String student_answer;
 
     @Column(columnDefinition="bit(1)")
     private boolean is_correct;
 
+    public quiz_submit(){}
 }
 
 class quiz_submitPK implements Serializable {
-    private syllabus syllabus_id;
-    private student student_id;
-    private quiz quiz_id;
-    private quiz question_num;
+    private String syllabus_id;
+    private String student_id;
+    private String quiz_id;
+    private int question_num;
 
 }

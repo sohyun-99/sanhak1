@@ -4,30 +4,26 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-@Entity(name="grade")
+@Entity
 @IdClass(gradePK.class)
 public class grade {
     @Id
     @GeneratedValue
     @Column(length = 10,columnDefinition ="char")
-    @OneToOne
-    @JoinColumn
-    private student student_id;
+    private String student_id;
 
     @Id
     @GeneratedValue
     @Column(columnDefinition="TINYINT")
-    private int grade_year;
+    private int year;
 
     @Id
     @GeneratedValue
     @Column(columnDefinition = "TINYINT")
-    private int grade_semester;
+    private int semester;
 
-    @OneToOne
-    @JoinColumn
     @Column(length = 20)
-    private student major;
+    private String major;
 
     @Column(columnDefinition = "TINYINT")
     private int rank;
@@ -40,10 +36,12 @@ public class grade {
 
     @Column(columnDefinition = "TINYINT")
     private int student_semester;
+
+    public grade(){}
 }
 
 class gradePK implements Serializable {
-    private student student_id;
+    private String student_id;
     private int year;
     private int semester;
 

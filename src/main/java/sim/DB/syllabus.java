@@ -4,17 +4,14 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-
 public class syllabus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length = 14,columnDefinition ="char")
     private String syllabus_id;
 
-    @OneToOne
-    @JoinColumn
     @Column(length = 20,columnDefinition ="char")
-    private professor professor_id;
+    private String professor_id;
 
     @Column(length = 20)
     private String name;
@@ -43,7 +40,7 @@ public class syllabus {
     @Column(columnDefinition = "TINYINT")
     private int time2;
 
-
+    public syllabus(){}
 }
 
 
